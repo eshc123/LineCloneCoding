@@ -1,5 +1,6 @@
 package org.standardj.rine.ui.home
 
+import android.app.ActionBar
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -27,5 +28,12 @@ class HomeFragment : Fragment() {
 //            textView.text = it
 //        })
         return root
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        val actionBar : ActionBar? = activity?.actionBar
+        actionBar?.setDisplayShowTitleEnabled(false)
+
     }
 }
