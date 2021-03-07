@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Rine</string>
-    <string name="title_home">Home</string>
-    <string name="title_conversation">conversation</string>
-    <string name="title_timeline">Timeline</string>
-    <string name="title_call">Call</string>
+    <string name="title_home">홈</string>
+    <string name="title_conversation">대화</string>
+    <string name="title_timeline">타임라인</string>
+    <string name="title_call">통화</string>
 </resources>
