@@ -24,14 +24,14 @@ class ConversationAdapter(private val itemlist : Array<Conversation>) : Recycler
         }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ConversationAdapter.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context)
                 .inflate(R.layout.item_conversation, parent, false)
 
         return ViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: ConversationAdapter.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.name.text = itemlist.get(position).name
         holder.time.text = itemlist.get(position).time
         holder.content.text = itemlist.get(position).content

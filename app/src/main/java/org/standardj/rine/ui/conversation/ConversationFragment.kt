@@ -8,6 +8,7 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.fragment_conversation.*
 import org.standardj.rine.R
@@ -35,7 +36,8 @@ class ConversationFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val list = arrayOf(Conversation(1,"친구1","오후 5:00","안녕하세요!!"),Conversation(2,"친구2","1.25","안녕하세요!!"))
         val adapter = ConversationAdapter(list)
+        conversation_recyclerview.layoutManager = LinearLayoutManager(context)
         conversation_recyclerview.adapter = adapter
     }
-    
+
 }
