@@ -8,7 +8,12 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
+import kotlinx.android.synthetic.main.fragment_conversation.*
+import kotlinx.android.synthetic.main.fragment_timeline.*
 import org.standardj.rine.R
+import org.standardj.rine.ui.conversation.Conversation
+import org.standardj.rine.ui.conversation.ConversationAdapter
 
 class TimelineFragment : Fragment() {
 
@@ -22,10 +27,18 @@ class TimelineFragment : Fragment() {
         timelineViewModel =
                 ViewModelProvider(this).get(TimelineViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_timeline, container, false)
-        val textView: TextView = root.findViewById(R.id.text_timeline)
-        timelineViewModel.text.observe(viewLifecycleOwner, Observer {
-            textView.text = it
-        })
+       // val textView: TextView = root.findViewById(R.id.text_timeline)
+//        timelineViewModel.text.observe(viewLifecycleOwner, Observer {
+//            textView.text = it
+//        })
         return root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val list = arrayOf(Story(1,"스토리 추가"), Story(2,"브라운"),Story(3,"코니"))
+        val adapter = StoryAdapter(list)
+        timeline_story_recyclerview.layoutManager = LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
+        timeline_story_recyclerview.adapter = adapter
     }
 }
