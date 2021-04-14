@@ -9,6 +9,8 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.genie.wanttogo.ui.home.Feed
+import com.genie.wanttogo.ui.home.FeedAdapter
 import kotlinx.android.synthetic.main.fragment_conversation.*
 import kotlinx.android.synthetic.main.fragment_timeline.*
 import org.standardj.rine.R
@@ -40,5 +42,12 @@ class TimelineFragment : Fragment() {
         val adapter = StoryAdapter(list)
         timeline_story_recyclerview.layoutManager = LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
         timeline_story_recyclerview.adapter = adapter
+
+
+        val b = Feed("test1","2021년 3월 30일",R.mipmap.ic_launcher_round,"hello!",R.drawable.ic_banner_foreground)
+        val c = Feed("test2","2021년 3월 30일",R.mipmap.ic_launcher_round,"test",R.drawable.ic_banner_foreground)
+        val feedlist : Array<Feed> = arrayOf(b,c)
+        val feedadapter = FeedAdapter(feedlist)
+        timeline_feed_recyclerview.adapter = feedadapter
     }
 }

@@ -39,11 +39,11 @@
             android:src="@drawable/ic_baseline_video_call_24"
             android:layout_marginHorizontal="16dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/addFriend"
+            app:layout_constraintEnd_toStartOf="@+id/conversation_add"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            android:id="@+id/addFriend"
+            android:id="@+id/conversation_add"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:contentDescription="TODO"
